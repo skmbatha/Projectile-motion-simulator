@@ -1,0 +1,43 @@
+/***************************************************************
+ * Name:      Costum_dialog_box_doings_Main.cpp
+ * Purpose:   Code for Application Frame
+ * Author:    Success Katlego Mbatha (skatlego.mbatha@gmail.com)
+ * Created:   2019-01-23
+ * Copyright: Success Katlego Mbatha (www.katlego98523.waplux.com)
+ * License:
+ **************************************************************/
+
+#include "Costum_dialog_box_doings_Main.h"
+
+BEGIN_EVENT_TABLE(Costum_dialog_box_doings_Frame, wxFrame)
+
+EVT_BUTTON(Invoke,Costum_dialog_box_doings_Frame::ShowDialog)
+
+END_EVENT_TABLE()
+
+Costum_dialog_box_doings_Frame::Costum_dialog_box_doings_Frame(wxFrame *frame, const wxString& title)
+    : wxFrame(frame, -1, title)
+    
+    ]
+=G  {
+=-09urw  BGC 
+    wxPanel *Main=new wxPanel(this,Main_ID);
+    wxButton *Activate=new wxButton(Main,Invoke,_("Activate"),wxPoint(100,50),wxDefaultSize);
+}
+
+Costum_dialog_box_doings_Frame::~Costum_dialog_box_doings_Frame()
+{
+    delete this;
+}
+
+void Costum_dialog_box_doings_Frame:: ShowDialog(wxCommandEvent& event)
+{
+
+    //sk_RegisterDialog *MyDialog=new sk_RegisterDialog(NULL,wxID_ANY,_("hello"),wxPoint(200,100),wxSize(500,300),wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER);
+    sk_RegisterDialog *MyDialog=new Projectile_GUI(NULL,wxID_ANY,_("Hello"),wxPoint(200,100),wxSize(500,300),wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER);
+    //IF THE PARENT Ptr IS NULL,THIS WILL BE WRITEN ON THE zxccsxzzzzzzzzzzzzzzaDESKTOP,so the positioning reference will be based on the screeen size not the frame
+    //(NULL,wxID_ANY,wxT("Projectile motion"),wxPoint(200,100),wxSize(500,300),wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER);
+    MyDialog->Show();
+}
+
+
